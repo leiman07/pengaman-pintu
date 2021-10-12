@@ -1,0 +1,35 @@
+/*Di buat : Leiman GoVlog
+ * silahkan dipakai kodingnya, semoga bermanfaat yaa..
+ * jangan lupa subscribe channel youtube : Leiman GoVlog 
+ * supaya saya tetap share project"
+ */
+
+// constants won't change. They're used here to
+// set pin numbers:
+const int SensorPin = D7;       // the number of the Sensor pin
+const int RelayPin =  D5;       // the number of the Relay pin
+
+// variables will change:
+int sensorState = 0;         // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(RelayPin, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(SensorPin, INPUT_PULLUP);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  sensorState = digitalRead(SensorPin);
+
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  if (sensorState == HIGH) {
+    // turn LED on:
+    digitalWrite(RelayPin, HIGH); //relay akan menyala
+  } else {
+    // turn LED off:
+    digitalWrite(RelayPin, LOW); //relay akan mati
+  }
+}
